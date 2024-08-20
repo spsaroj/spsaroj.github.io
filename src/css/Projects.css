@@ -1,0 +1,75 @@
+/* Container for the Projects section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+  
+  /* Styling each project card */
+  .project-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Overlay to darken the background image */
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  /* Styling the project name */
+  .project-name {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling the project link button */
+  .project-link {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1em;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .project-link:hover {
+    background-color: #2980b9;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .project-card {
+      width: 90%;
+    }
+  }
+  
