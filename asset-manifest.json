@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fae86d52.css",
-    "main.js": "/static/js/main.3ac5b523.js",
+    "main.js": "/static/js/main.2e594b56.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/meditation.jpg": "/static/media/meditation.0ed04a8a2acc757760bb.jpg",
     "static/media/sentiment-analysis.jpg": "/static/media/sentiment-analysis.3535eb9da63801fc405b.jpg",
@@ -11,15 +11,15 @@
     "static/media/dumpling.jpg": "/static/media/dumpling.48bde01851df683c38a6.jpg",
     "static/media/nwmsu-logo.png": "/static/media/nwmsu-logo.452fafd06cc3a28bad46.png",
     "static/media/bd-logo.png": "/static/media/bd-logo.3ada05669e7d3c673717.png",
-    "static/media/resume.pdf": "/static/media/resume.f4eccb041c0609f3e77a.pdf",
+    "static/media/resume.pdf": "/static/media/resume.9347fb0e3f495a98c91e.pdf",
     "static/media/peep-connect-logo.png": "/static/media/peep-connect-logo.36227ec9f724f56420dc.png",
     "index.html": "/index.html",
     "main.fae86d52.css.map": "/static/css/main.fae86d52.css.map",
-    "main.3ac5b523.js.map": "/static/js/main.3ac5b523.js.map",
+    "main.2e594b56.js.map": "/static/js/main.2e594b56.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fae86d52.css",
-    "static/js/main.3ac5b523.js"
+    "static/js/main.2e594b56.js"
   ]
 }
