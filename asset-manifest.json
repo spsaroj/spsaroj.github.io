@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.fae86d52.css",
-    "main.js": "/static/js/main.2e594b56.js",
+    "main.css": "/static/css/main.91a6b146.css",
+    "main.js": "/static/js/main.d5b7befa.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/meditation.jpg": "/static/media/meditation.0ed04a8a2acc757760bb.jpg",
+    "static/media/profile.png": "/static/media/profile.82c002edfd2fe6290aa4.png",
     "static/media/sentiment-analysis.jpg": "/static/media/sentiment-analysis.3535eb9da63801fc405b.jpg",
-    "static/media/profile.png": "/static/media/profile.59ed4debae5d415a46f7.png",
     "static/media/video-calling.jpg": "/static/media/video-calling.1dfdb04a3ceb1cd431f9.jpg",
     "static/media/personal-database.jpg": "/static/media/personal-database.24f75652169ee70fbeec.jpg",
     "static/media/dumpling.jpg": "/static/media/dumpling.48bde01851df683c38a6.jpg",
@@ -14,12 +14,12 @@
     "static/media/resume.pdf": "/static/media/resume.9347fb0e3f495a98c91e.pdf",
     "static/media/peep-connect-logo.png": "/static/media/peep-connect-logo.36227ec9f724f56420dc.png",
     "index.html": "/index.html",
-    "main.fae86d52.css.map": "/static/css/main.fae86d52.css.map",
-    "main.2e594b56.js.map": "/static/js/main.2e594b56.js.map",
+    "main.91a6b146.css.map": "/static/css/main.91a6b146.css.map",
+    "main.d5b7befa.js.map": "/static/js/main.d5b7befa.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fae86d52.css",
-    "static/js/main.2e594b56.js"
+    "static/css/main.91a6b146.css",
+    "static/js/main.d5b7befa.js"
   ]
 }
