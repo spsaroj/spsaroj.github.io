@@ -9,7 +9,7 @@ function Contact() {
       <h2 className="section-title">Contact & Social Media</h2>
 
       <div className="social-media-links">
-        <a 
+        <a
           href="https://www.linkedin.com/in/saroz-paudel-053/"
           target="_blank"
           rel="noopener noreferrer"
@@ -19,7 +19,7 @@ function Contact() {
           <span className="social-media-name">LinkedIn</span>
         </a>
 
-        <a 
+        <a
           href="https://www.instagram.com/__imsaroz/"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,7 +29,7 @@ function Contact() {
           <span className="social-media-name">Instagram</span>
         </a>
 
-        <a 
+        <a
           href="https://github.com/spsaroj"
           target="_blank"
           rel="noopener noreferrer"
@@ -39,7 +39,7 @@ function Contact() {
           <span className="social-media-name">GitHub</span>
         </a>
 
-        <a 
+        <a
           href="https://leetcode.com/spsaroj/"
           target="_blank"
           rel="noopener noreferrer"
@@ -50,7 +50,7 @@ function Contact() {
         </a>
       </div>
 
-      <div className="youtube-channel">
+      {/* <div className="youtube-channel">
         <h3 className="youtube-title">Find me in YouTube</h3>
         <div className="youtube-video">
           <iframe
@@ -61,7 +61,7 @@ function Contact() {
             allowFullScreen
           ></iframe>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
