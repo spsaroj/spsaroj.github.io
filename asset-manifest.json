@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.91a6b146.css",
-    "main.js": "/static/js/main.0b7deb83.js",
+    "main.js": "/static/js/main.5bbc1e47.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/meditation.jpg": "/static/media/meditation.0ed04a8a2acc757760bb.jpg",
-    "static/media/profile.png": "/static/media/profile.82c002edfd2fe6290aa4.png",
     "static/media/sentiment-analysis.jpg": "/static/media/sentiment-analysis.3535eb9da63801fc405b.jpg",
     "static/media/video-calling.jpg": "/static/media/video-calling.1dfdb04a3ceb1cd431f9.jpg",
+    "static/media/profile-pic.png": "/static/media/profile-pic.e36f2b15319a8ec77565.png",
     "static/media/personal-database.jpg": "/static/media/personal-database.24f75652169ee70fbeec.jpg",
     "static/media/dumpling.jpg": "/static/media/dumpling.48bde01851df683c38a6.jpg",
     "static/media/nwmsu-logo.png": "/static/media/nwmsu-logo.452fafd06cc3a28bad46.png",
-    "static/media/resume.pdf": "/static/media/resume.97f5e70f959c0054802c.pdf",
-    "static/media/bd-logo.png": "/static/media/bd-logo.3ada05669e7d3c673717.png",
-    "static/media/peep-connect-logo.png": "/static/media/peep-connect-logo.36227ec9f724f56420dc.png",
+    "static/media/resume.pdf": "/static/media/resume.8ef0c2a4070dab16ddd4.pdf",
+    "static/media/tcs-logo.png": "/static/media/tcs-logo.951c83374e7256ceaf9a.png",
+    "static/media/morgan-stanley-logo.png": "/static/media/morgan-stanley-logo.e5ba5e773fdb9eaba6b9.png",
     "index.html": "/index.html",
     "main.91a6b146.css.map": "/static/css/main.91a6b146.css.map",
-    "main.0b7deb83.js.map": "/static/js/main.0b7deb83.js.map",
+    "main.5bbc1e47.js.map": "/static/js/main.5bbc1e47.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.91a6b146.css",
-    "static/js/main.0b7deb83.js"
+    "static/js/main.5bbc1e47.js"
   ]
 }
