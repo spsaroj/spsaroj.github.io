@@ -6,7 +6,7 @@ import dumplingImage from '../assets/images/dumpling.jpg';
 
 import nwmsuLogo from '../assets/images/nwmsu-logo.png';
 import morganstanleyLogo from '../assets/images/morgan-stanley-logo.png';
-import tcsLogo from '../assets/images/tcs-logo.png';
+import bdLogo from '../assets/images/bd-logo.png'
 import peepLogo from '../assets/images/peep-logo.png';
 
 export const workExperiences = [
@@ -14,7 +14,7 @@ export const workExperiences = [
     company: 'Northwest Missouri State University',
     role: 'Software Developer',
     duration: 'May 2024 - Dec 2024',
-    description: 'Python, JavaScript, SQL, VueJS, PyTorch.',
+    description: 'Python, JavaScript, SQL, VueJS, Machine Learning Algorithms.',
     logo: `${nwmsuLogo}`,
     website: 'https://www.nwmissouri.edu/academics/LTC/learning/index.htm',
   },
@@ -27,18 +27,18 @@ export const workExperiences = [
     website: 'https://www.nwmissouri.edu/csis/',
   },
   {
-    company: 'Tata Consultancy Services',
+    company: 'Becton, Dickinson and Company (BD)',
     role: 'Software Developer',
-    duration: 'Apr 2022 - Dec 2022',
-    description: 'Java Enterprise, SOLR',
-    logo: `${tcsLogo}`,
-    website: 'https://www.tcs.com/',
+    duration: 'Apr 2022 - Feb 2023',
+    description: 'Java Enterprise, Spring Boot, React',
+    logo: `${bdLogo}`,
+    website: 'https://www.bd.com/en-us/',
   },
   {
     company: 'Morgan Stanley',
     role: 'Software Developer',
-    duration: 'Nov 2021 - Mar 2022',
-    description: 'Java Enterprise, Adobe Experience Manager (AEM), JSON.',
+    duration: 'Sept 2021 - Apr 2022',
+    description: 'Java Enterprise, Adobe Experience Manager (AEM), React.',
     logo: `${morganstanleyLogo}`,
     website: 'https://www.morganstanley.com/',
   },
@@ -88,6 +88,7 @@ export const skills = {
     { name: 'React', icon: '⚛️' },
     { name: 'Python', icon: '🐍' },
     { name: 'Database', icon: '💾' },
+    { name: 'AWS', icon: '☁️' },
   ],
   interests: [
     { name: 'Machine Learning', icon: '🤖' },

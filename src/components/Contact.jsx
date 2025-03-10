@@ -20,7 +20,7 @@ function Contact() {
         </a>
 
         <a
-          href="https://www.instagram.com/__imsaroz/"
+          href="https://www.instagram.com/itsmesaroz/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-media-icon instagram"
