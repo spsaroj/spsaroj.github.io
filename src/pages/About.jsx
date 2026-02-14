@@ -1,6 +1,28 @@
+import { useState } from 'react';
 import profilePic from '../assets/images/profile-pic.png';
+import { bioData } from '../constants/consts';
 
 const About = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const shortText = (
+    <>
+      "I love building software that works in the real world.<br />I focus on fast delivery while building fault-tolerant systems."
+    </>
+  );
+
+  const Highlight = ({ children }) => (
+    <span className="bg-gradient-to-r from-lime-600 to-cyan-600 text-transparent bg-clip-text">{children}</span>
+  );
+
+  const longText = (
+    <>
+      "I am a <Highlight>{bioData.roles}</Highlight> with <Highlight>{bioData.years} years</Highlight> of experience <Highlight>{bioData.accomplishment}</Highlight>.
+      My greatest strength is <Highlight>{bioData.strength}</Highlight>, and I have talent for <Highlight>{bioData.talent}</Highlight>.
+      I am passionate about <Highlight>{bioData.motivation}</Highlight> and I value <Highlight>{bioData.values}</Highlight> while I do it!"
+    </>
+  );
+
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-4xl mx-auto">
       <div className="relative group">
@@ -19,16 +41,25 @@ const About = () => {
             Saroj Paudel
           </h1>
           <p className="inline-block bg-gradient-to-r from-lime-600 to-cyan-600 text-transparent bg-clip-text font-bold text-lg tracking-wide">
-            Software Engineer
+            Software Engineer / Project Manager
           </p>
           <p className="text-neutral-400 font-mono text-sm tracking-widest uppercase mt-2">
             (Sha rəʊz - Pou dɛl)
           </p>
         </div>
 
-        <blockquote className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed border-l-4 border-lime-500/50 pl-6 mx-4 md:mx-0">
-          "I love building software that works in the real world.<br />I focus on fast delivery while building fault-tolerant systems."
-        </blockquote>
+        <div className="space-y-4">
+          <blockquote className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed border-l-4 border-lime-500/50 pl-6 mx-4 md:mx-0 transition-all duration-500 ease-in-out">
+            {isExpanded ? longText : shortText}
+          </blockquote>
+
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-lime-600 hover:text-lime-700 font-medium text-sm focus:outline-none transition-colors duration-200 pl-6 md:pl-0"
+          >
+            {isExpanded ? 'Show Less' : 'Read More'}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -25,6 +25,16 @@ const Services = () => {
                 {skill.name}
               </h3>
 
+              <div className="relative mt-2 w-full">
+                <div className='absolute inset-0 flex items-center justify-center text-xs font-bold text-cyan-700 opacity-100 group-hover:opacity-0 transition-opacity duration-500'>
+                  View details
+                </div>
+
+                <div className="text-xs text-neutral-600 group-hover:text-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center px-2">
+                  {skill.details}
+                </div>
+              </div>
+
               {/* Artistic underline decoration */}
               <div className="w-12 h-1 bg-gradient-to-r from-lime-400 to-cyan-400 rounded-full mt-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"></div>
             </div>
