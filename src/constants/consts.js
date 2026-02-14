@@ -41,11 +41,21 @@ export const workExperiences = [
 
 export const skills = {
   technical: [
-    { name: 'Web Development', icon: '👨🏻‍💻' },
-    { name: 'Mobile Development', icon: '📱' },
-    { name: 'AI/ML Integration', icon: '🤖' },
-    { name: 'DevOps', icon: '☁️' },
-    { name: 'Project Management', icon: '📋' },
-    { name: 'Consulting', icon: '🤝' },
+    { name: 'Software Development', icon: '👨🏻‍💻📱', details: 'Web, Android, iOS' },
+    { name: 'Code Cleanup', icon: '⌨️🧹', details: 'Refactoring, Optimization, Vibe-Code Cleanup' },
+    { name: 'AI/ML Integration', icon: '🦾🤖', details: 'AI Agents, MCP, AI Solutions, LLMs' },
+    { name: 'DevOps', icon: '☁️⚙️', details: 'CI/CD, AWS, Docker' },
+    { name: 'Project Management', icon: '📋🔁', details: 'Agile, Scrum, Kanban' },
+    { name: 'Consulting', icon: '🤝💡', details: 'AI Consulting, Technical Consulting' },
   ],
+};
+
+export const bioData = {
+  roles: "Software Engineer and Project Manager",
+  years: "5",
+  accomplishment: "helping build scalable and fault-tolerant software systems",
+  strength: "collaborating and driving efficiencies across teams",
+  talent: "understanding market's needs",
+  motivation: "helping companies using new technologies, including AI-driven solutions, develop customer facing products",
+  values: "having fun, bringing positive impact and being authentic"
 };
