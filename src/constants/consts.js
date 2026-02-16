@@ -44,9 +44,9 @@ export const skills = {
     { name: 'Software Development', icon: '👨🏻‍💻📱', details: 'Web, Android, iOS' },
     { name: 'Code Cleanup', icon: '⌨️🧹', details: 'Refactoring, Optimization, Vibe-Code Cleanup' },
     { name: 'AI/ML Integration', icon: '🦾🤖', details: 'AI Agents, MCP, AI Solutions, LLMs' },
+    { name: 'Product Engineering', icon: '💡👷🏻‍♂️', details: 'Market Analysis, Roadmapping, Product Strategy, User Research' },
     { name: 'DevOps', icon: '☁️⚙️', details: 'CI/CD, AWS, Docker' },
     { name: 'Project Management', icon: '📋🔁', details: 'Agile, Scrum, Kanban' },
-    { name: 'Consulting', icon: '🤝💡', details: 'AI Consulting, Technical Consulting' },
   ],
 };
 
