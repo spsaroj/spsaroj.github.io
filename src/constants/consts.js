@@ -51,7 +51,7 @@ export const skills = {
 };
 
 export const bioData = {
-  roles: "Software Engineer and Project Manager",
+  roles: "Product Engineer/ Software Engineer",
   years: "5",
   accomplishment: "helping build scalable and fault-tolerant software systems",
   strength: "collaborating and driving efficiencies across teams",
@@ -59,3 +59,20 @@ export const bioData = {
   motivation: "helping companies using new technologies, including AI-driven solutions, develop customer facing products",
   values: "having fun, bringing positive impact and being authentic"
 };
+
+export const certifications = [
+  {
+    name: 'Google Project Management',
+    providerName: 'Coursera',
+    issuedDate: '',
+    credentialId: '',
+    credentialLink: '',
+  },
+  {
+    name: 'Machine Learning',
+    providerName: 'Coursera',
+    issuedDate: 'Oct 2021',
+    credentialId: 'JW9AUD2X5QKU',
+    credentialLink: 'https://coursera.org/share/f8ec7a05cfa199fd79a6f5719e9419ce',
+  }
+]

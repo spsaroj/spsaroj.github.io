@@ -41,7 +41,7 @@ const About = () => {
             Saroj Paudel
           </h1>
           <p className="inline-block bg-gradient-to-r from-lime-600 to-cyan-600 text-transparent bg-clip-text font-bold text-lg tracking-wide">
-            Software Engineer / Project Manager
+            Software Engineer / Product Engineer
           </p>
           <p className="text-neutral-400 font-mono text-sm tracking-widest uppercase mt-2">
             (Sha rəʊz - Pou dɛl)
