@@ -44,25 +44,25 @@ const updateSideArrowPaths = () => {
   const sCenterY = Math.round(sRect.top - cRect.top + sRect.height / 2);
 
   // Right turnaround point (clamped within container)
-  const rightMargin = 8;
+  const rightMargin = 6;
   const maxRightContent = Math.max(kRightX, gRightX);
-  const rightTurnX = Math.min(
-    Math.round(cRect.width - rightMargin),
-    maxRightContent + 22
+  const rightTurnX = Math.max(
+    maxRightContent + 8,
+    Math.min(Math.round(cRect.width - rightMargin), maxRightContent + 22)
   );
-  const cornerR1 = Math.min(8, Math.max(2, (rightTurnX - maxRightContent) / 2), Math.abs(gCenterY - kCenterY) / 2);
+  const cornerR1 = Math.max(2, Math.min(8, (rightTurnX - maxRightContent) / 2, Math.abs(gCenterY - kCenterY) / 2));
 
   // Path 1: From right side of Kafka to right side of Go/Spring
   path1.value = `M ${kRightX + 2} ${kCenterY} H ${rightTurnX - cornerR1} Q ${rightTurnX} ${kCenterY} ${rightTurnX} ${kCenterY + cornerR1} V ${gCenterY - cornerR1} Q ${rightTurnX} ${gCenterY} ${rightTurnX - cornerR1} ${gCenterY} H ${gRightX + 5}`;
 
   // Left turnaround point (clamped within container)
-  const leftMargin = 8;
+  const leftMargin = 6;
   const minLeftContent = Math.min(gLeftX, sLeftX);
-  const leftTurnX = Math.max(
-    leftMargin,
-    minLeftContent - 22
+  const leftTurnX = Math.min(
+    minLeftContent - 8,
+    Math.max(leftMargin, minLeftContent - 22)
   );
-  const cornerR2 = Math.min(8, Math.max(2, (minLeftContent - leftTurnX) / 2), Math.abs(sCenterY - gCenterY) / 2);
+  const cornerR2 = Math.max(2, Math.min(8, (minLeftContent - leftTurnX) / 2, Math.abs(sCenterY - gCenterY) / 2));
 
   // Path 2: From left side of Go/Spring to left side of Security
   path2.value = `M ${gLeftX - 2} ${gCenterY} H ${leftTurnX + cornerR2} Q ${leftTurnX} ${gCenterY} ${leftTurnX} ${gCenterY + cornerR2} V ${sCenterY - cornerR2} Q ${leftTurnX} ${sCenterY} ${leftTurnX + cornerR2} ${sCenterY} H ${sLeftX - 5}`;
@@ -161,15 +161,15 @@ onUnmounted(() => {
       </div>
 
       <!-- Right Column: 2x2 Bento Cluster -->
-      <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 scroll-reveal scroll-delay-2">
+      <div class="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4 scroll-reveal scroll-delay-2">
         <!-- Bento 1: Specialty & Architecture Card -->
         <div
-          class="bg-white rounded-2xl p-5 border border-neutral-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex flex-col justify-between h-[230px] sm:h-[250px] group hover:border-neutral-300 transition-all"
+          class="col-span-1 bg-white rounded-2xl p-3 sm:p-5 border border-neutral-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.03)] flex flex-col justify-between h-[220px] sm:h-[250px] group hover:border-neutral-300 transition-all"
         >
           <!-- Micro Architecture preview with side serpentine flow -->
           <div
             ref="containerRef"
-            class="relative bg-neutral-50 rounded-xl p-3 sm:p-3.5 border border-neutral-100 flex flex-col justify-between items-center h-[148px] sm:h-[158px] overflow-hidden select-none"
+            class="relative bg-neutral-50 rounded-xl p-2 sm:p-3.5 border border-neutral-100 flex flex-col justify-between items-center h-[142px] sm:h-[158px] overflow-hidden select-none"
           >
             <!-- SVG Circuit Tracks & Side Flow Arrows -->
             <svg class="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -240,51 +240,51 @@ onUnmounted(() => {
             <!-- Step 1: Kafka (Right port connects to Go/Spring) -->
             <div
               ref="kafkaRef"
-              class="relative z-10 flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-xs text-neutral-800"
+              class="relative z-10 flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-[10px] sm:text-xs text-neutral-800"
             >
-              <Zap class="w-3.5 h-3.5 text-amber-500 shrink-0" />
+              <Zap class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 shrink-0" />
               <span class="font-medium text-neutral-900">{{ aboutConfig.architectureCard.pipeline[0].name }}</span>
             </div>
 
             <!-- Step 2: Go / Spring (Receives on right, sends on left) -->
             <div
               ref="goRef"
-              class="relative z-10 flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-xs text-neutral-800"
+              class="relative z-10 flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-[10px] sm:text-xs text-neutral-800"
             >
-              <Layers class="w-3.5 h-3.5 text-blue-500 shrink-0" />
+              <Layers class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-500 shrink-0" />
               <span class="font-medium text-neutral-900">{{ aboutConfig.architectureCard.pipeline[1].name }}</span>
             </div>
 
             <!-- Step 3: Security (Receives on left) -->
             <div
               ref="securityRef"
-              class="relative z-10 flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-xs text-neutral-800"
+              class="relative z-10 flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-[10px] sm:text-xs text-neutral-800"
             >
-              <ShieldCheck class="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <ShieldCheck class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500 shrink-0" />
               <span class="font-medium text-neutral-900">{{ aboutConfig.architectureCard.pipeline[2].name }}</span>
             </div>
           </div>
 
           <!-- Bottom Pill Badge (Matching original preferred design) -->
           <div>
-            <div class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-neutral-100 text-neutral-800 font-mono text-[10px] sm:text-xs font-medium max-w-full">
+            <div class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-neutral-100 text-neutral-800 font-mono text-[9px] sm:text-xs font-medium max-w-full">
               <span class="w-1.5 h-1.5 rounded-full bg-neutral-900 shrink-0"></span>
-              <span class="whitespace-nowrap">{{ aboutConfig.architectureCard.tag }}</span>
+              <span class="truncate">{{ aboutConfig.architectureCard.tag }}</span>
             </div>
           </div>
         </div>
 
         <!-- Bento 2: Portrait Card -->
         <div
-          class="rounded-2xl overflow-hidden border border-neutral-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.03)] bg-gradient-to-b from-neutral-100 to-neutral-200/70 h-[230px] sm:h-[250px] relative group"
+          class="col-span-1 rounded-2xl overflow-hidden border border-neutral-200/80 shadow-[0_2px_10px_rgba(0,0,0,0.03)] bg-gradient-to-b from-neutral-100 to-neutral-200/70 h-[220px] sm:h-[250px] relative group"
         >
           <img
             :src="personalInfo.profilePic"
             :alt="personalInfo.name"
-            class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full object-cover object-[center_35%] transition-transform duration-300 group-hover:scale-105"
           />
           <!-- Location Badge at Top Right -->
-          <div class="absolute top-2.5 right-2.5 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-mono font-medium text-white border border-white/10 shadow-xs flex items-center gap-1.5">
+          <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-medium text-white border border-white/10 shadow-xs flex items-center gap-1 sm:gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
             <span>{{ personalInfo.location }}</span>
           </div>
@@ -292,7 +292,7 @@ onUnmounted(() => {
 
         <!-- Bento 3: Recent Brands / Teams Card -->
         <div
-          class="rounded-2xl p-5 shadow-sm bg-gradient-to-br from-indigo-500 via-indigo-600 to-blue-600 text-white flex flex-col justify-between h-[150px] sm:h-[160px]"
+          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 shadow-sm bg-gradient-to-br from-indigo-500 via-indigo-600 to-blue-600 text-white flex flex-col justify-between h-[140px] sm:h-[160px]"
         >
           <p class="text-xs font-medium text-indigo-100 leading-snug">
             {{ aboutConfig.teamsCard.title }}
@@ -311,7 +311,7 @@ onUnmounted(() => {
 
         <!-- Bento 4: Profile & Social Circles (LinkedIn, GitHub, LeetCode) -->
         <div
-          class="rounded-2xl p-4 sm:p-5 border border-neutral-200/80 bg-neutral-50/70 flex items-center justify-center h-[150px] sm:h-[160px]"
+          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 border border-neutral-200/80 bg-neutral-50/70 flex items-center justify-center h-[110px] sm:h-[160px]"
         >
           <div class="flex items-center justify-center gap-4 sm:gap-5">
             <!-- LinkedIn -->
