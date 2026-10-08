@@ -32,8 +32,8 @@ export const navigationConfig = {
   navLinks: [
     { name: 'Home', href: '#overview', external: false },
     { name: 'Timeline', href: '#timeline', external: false },
-    { name: 'Skills', href: '#skills', external: false }
-    // { name: 'Toyaam', href: 'https://toyaam.com', external: true }
+    { name: 'Skills', href: '#skills', external: false },
+    { name: 'Blogs', href: 'https://toyaam.com/blogs/', external: true }
   ],
   contactCta: 'Contact'
 };
