@@ -86,7 +86,7 @@ export const valueFit = [
   {
     title: 'The Hybrid Edge',
     description:
-      'Most software vulnerabilities are architectural flaws rather than zero-days. With 4+ years building high-throughput pipelines at PNC Bank and multi-tenant platforms at Reffero, I bridge production software engineering with formal cybersecurity, building systems that are resilient, fault-tolerant, and secure by design from day zero.'
+      'Most software vulnerabilities are architectural flaws rather than zero-days. With 5+ years building high-throughput pipelines at PNC Bank and multi-tenant platforms at Reffero, I bridge production software engineering with formal cybersecurity, building systems that are resilient, fault-tolerant, and secure by design from day zero.'
   },
   {
     title: 'Ideal Problem Space',
