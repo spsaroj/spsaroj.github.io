@@ -92,26 +92,45 @@ onUnmounted(() => {
           <div
             v-for="item in col.items"
             :key="item.id"
-            class="group text-left"
+            class="group text-left flex items-start gap-3 sm:gap-3.5"
           >
-            <!-- Title with color-coded distinction and click to open modal -->
+            <!-- Logo thumbnail -->
             <button
+              v-if="'logo' in item && item.logo"
+              type="button"
               @click="openDetail(item)"
-              :class="[
-                'text-lg sm:text-xl font-medium tracking-tight text-left block transition-colors cursor-pointer group-hover:underline underline-offset-4',
-                item.type === 'education'
-                  ? 'text-emerald-700 hover:text-emerald-900'
-                  : 'text-neutral-950 hover:text-neutral-600'
-              ]"
+              class="w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-xl border border-neutral-200/80 bg-neutral-50/70 p-2 flex items-center justify-center transition-all duration-200 group-hover:scale-105 group-hover:border-neutral-300 group-hover:shadow-xs cursor-pointer overflow-hidden mt-0.5"
               :title="`Click to view details for ${item.title}`"
+              :aria-label="`View details for ${item.title}`"
             >
-              {{ item.title }}
+              <img
+                :src="item.logo"
+                :alt="item.institution + ' logo'"
+                class="max-w-full max-h-full object-contain"
+                loading="lazy"
+              />
             </button>
 
-            <!-- Institution / Company / Location Subtitle -->
-            <p class="text-xs sm:text-sm text-neutral-500 font-normal mt-1">
-              {{ item.institution }}
-            </p>
+            <div class="flex-1 min-w-0">
+              <!-- Title with color-coded distinction and click to open modal -->
+              <button
+                @click="openDetail(item)"
+                :class="[
+                  'text-lg sm:text-xl font-medium tracking-tight text-left block transition-colors cursor-pointer group-hover:underline underline-offset-4',
+                  item.type === 'education'
+                    ? 'text-emerald-700 hover:text-emerald-900'
+                    : 'text-neutral-950 hover:text-neutral-600'
+                ]"
+                :title="`Click to view details for ${item.title}`"
+              >
+                {{ item.title }}
+              </button>
+
+              <!-- Institution / Company / Location Subtitle -->
+              <p class="text-xs sm:text-sm text-neutral-500 font-normal mt-1">
+                {{ item.institution }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -128,50 +147,65 @@ onUnmounted(() => {
           class="relative w-full max-w-xl bg-white rounded-xl border border-neutral-200 shadow-2xl p-5 sm:p-7 max-h-[85vh] overflow-y-auto space-y-6"
         >
           <!-- Modal Header -->
-          <div class="flex items-start justify-between gap-4 pb-3 border-b border-neutral-100">
-            <div>
-              <!-- Type Badge -->
-              <span
-                :class="[
-                  'inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full font-medium mb-1.5',
-                  selectedItem.type === 'education'
-                    ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/60'
-                    : 'bg-neutral-100 text-neutral-800 border border-neutral-200'
-                ]"
+          <div class="flex items-start justify-between gap-3 sm:gap-4 pb-4 border-b border-neutral-100">
+            <div class="flex items-start gap-3.5 sm:gap-4 min-w-0">
+              <!-- Logo Container -->
+              <div
+                v-if="'logo' in selectedItem && selectedItem.logo"
+                class="w-13 h-13 sm:w-16 sm:h-16 shrink-0 rounded-xl border border-neutral-200/80 bg-neutral-50/70 p-2 sm:p-2.5 flex items-center justify-center shadow-xs overflow-hidden"
               >
-                <GraduationCap v-if="selectedItem.type === 'education'" class="w-3 h-3" />
-                <Briefcase v-else class="w-3 h-3" />
-                <span>{{ selectedItem.type === 'education' ? 'Academic Degree' : 'Work Experience' }}</span>
-              </span>
-
-              <h3 class="text-lg sm:text-xl font-bold text-neutral-950">
-                {{ selectedItem.title }}
-              </h3>
-
-              <div class="flex items-center gap-2 mt-0.5">
-                <span class="text-sm font-semibold text-neutral-700">
-                  {{ selectedItem.institution }}
-                </span>
-                <a
-                  v-if="'website' in selectedItem && selectedItem.website"
-                  :href="selectedItem.website"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-neutral-400 hover:text-neutral-900 transition-colors"
-                  aria-label="Visit website"
-                >
-                  <ExternalLink class="w-3.5 h-3.5" />
-                </a>
+                <img
+                  :src="selectedItem.logo"
+                  :alt="selectedItem.institution + ' logo'"
+                  class="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
               </div>
 
-              <p class="text-xs font-mono text-neutral-400 mt-1">
-                {{ selectedItem.location }} · {{ selectedItem.period }}
-              </p>
+              <div class="min-w-0">
+                <!-- Type Badge -->
+                <span
+                  :class="[
+                    'inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded-full font-medium mb-1.5',
+                    selectedItem.type === 'education'
+                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/60'
+                      : 'bg-neutral-100 text-neutral-800 border border-neutral-200'
+                  ]"
+                >
+                  <GraduationCap v-if="selectedItem.type === 'education'" class="w-3 h-3" />
+                  <Briefcase v-else class="w-3 h-3" />
+                  <span>{{ selectedItem.type === 'education' ? 'Academic Degree' : 'Work Experience' }}</span>
+                </span>
+
+                <h3 class="text-lg sm:text-xl font-bold text-neutral-950 leading-snug">
+                  {{ selectedItem.title }}
+                </h3>
+
+                <div class="flex items-center gap-2 mt-0.5">
+                  <span class="text-sm font-semibold text-neutral-700">
+                    {{ selectedItem.institution }}
+                  </span>
+                  <a
+                    v-if="'website' in selectedItem && selectedItem.website"
+                    :href="selectedItem.website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-neutral-400 hover:text-neutral-900 transition-colors"
+                    aria-label="Visit website"
+                  >
+                    <ExternalLink class="w-3.5 h-3.5" />
+                  </a>
+                </div>
+
+                <p class="text-xs font-mono text-neutral-400 mt-1">
+                  {{ selectedItem.location }} · {{ selectedItem.period }}
+                </p>
+              </div>
             </div>
 
             <button
               @click="closeDetail"
-              class="p-1.5 text-neutral-400 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors cursor-pointer"
+              class="p-1.5 text-neutral-400 hover:text-neutral-950 hover:bg-neutral-100 rounded-md transition-colors cursor-pointer shrink-0"
               aria-label="Close modal"
             >
               <X class="w-4 h-4" />

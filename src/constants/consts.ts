@@ -1,4 +1,10 @@
 import profilePic from '../assets/images/profile-pic.png';
+import bdLogo from '../assets/images/bd-logo.svg';
+import nwmsuLogo from '../assets/images/nwmsu-logo.svg';
+import peepLogo from '../assets/images/peep-logo.svg';
+import pncLogo from '../assets/images/pnc-logo.svg';
+import refferoLogo from '../assets/images/reffero-logo.svg';
+import unitecLogo from '../assets/images/unitec-logo.svg';
 
 // Personal Information & Metadata
 export const personalInfo = {
@@ -116,6 +122,7 @@ export const timelineColumns = [
         period: 'Aug 2016 – Dec 2020',
         location: 'Maryville, MO, USA',
         status: 'Graduated',
+        logo: nwmsuLogo,
         focus: [
           'Algorithms & Data Structures',
           'Operating Systems',
@@ -123,12 +130,12 @@ export const timelineColumns = [
           'Relational Databases'
         ],
         details:
-          'Rigorous foundation in computer science core principles, algorithms, data structures, and low-level software engineering methodologies.'
+          'Foundation in computer science core principles, algorithms, data structures, and low-level software engineering methodologies.'
       }
     ]
   },
   {
-    period: '2021 – 2023',
+    period: '2019 – 2023',
     label: 'Mobile & Enterprise',
     items: [
       {
@@ -136,9 +143,10 @@ export const timelineColumns = [
         type: 'experience',
         title: 'iOS Mobile Developer',
         institution: 'Peep Connect LLC, US',
-        period: 'Apr 2021 – Sep 2021',
+        period: 'Apr 2019 – Sep 2021',
         location: 'Kansas City, USA',
         website: 'https://www.linkedin.com/company/peepconnect/',
+        logo: peepLogo,
         summary:
           'Developed social media iOS application using Swift and SwiftUI with AWS backend hosting, Firebase notifications, and third-party SDK integrations.',
         highlights: [
@@ -156,6 +164,7 @@ export const timelineColumns = [
         period: 'Nov 2021 – Mar 2023',
         location: 'Franklin Lakes, NJ, USA',
         website: 'https://www.bd.com',
+        logo: bdLogo,
         summary:
           'Programmed Golang/Gin microservices and built Kafka-based services processing ~6,000 real-time events/sec from thousands of medical devices.',
         highlights: [
@@ -175,14 +184,16 @@ export const timelineColumns = [
         period: 'Aug 2023 – Dec 2024',
         location: 'Maryville, MO, USA',
         status: 'Graduated',
+        logo: nwmsuLogo,
         focus: [
           'Advanced Distributed Systems',
           'Machine Learning Applications',
           'Cloud Architecture',
-          'Database Systems'
+          'Database Systems',
+          'Software Design Patterns'
         ],
         details:
-          'Graduate research and advanced systems engineering, specializing in scalable data pipelines and practical ML workflows.'
+          'Advanced systems engineering, specializing in scalable data pipelines and practical ML workflows.'
       }
     ]
   },
@@ -198,6 +209,7 @@ export const timelineColumns = [
         period: 'May 2024 – Dec 2024',
         location: 'Maryville, MO, USA',
         website: 'https://www.nwmissouri.edu',
+        logo: nwmsuLogo,
         summary:
           'Developed, debugged, and maintained internal ML applications for campus operations using Python (FastAPI), Vue, and TypeScript.',
         highlights: [
@@ -214,6 +226,7 @@ export const timelineColumns = [
         period: 'Feb 2025 – Dec 2025',
         location: 'Farmers Branch, TX, USA',
         website: 'https://www.pnc.com',
+        logo: pncLogo,
         summary:
           "Engineered event-driven microservices using Golang, Kafka, and Java Kafka Streams supporting real-time data flows across the bank's streaming platform.",
         highlights: [
@@ -243,6 +256,7 @@ export const timelineColumns = [
         period: 'Dec 2025 – Aug 2026',
         location: 'Kathmandu, Nepal',
         website: 'https://reffero.com',
+        logo: refferoLogo,
         summary:
           'Designed and shipped core product features for a consumer-facing creator-commerce platform (Golang, Nuxt, PostgreSQL), enabling creators to launch and manage digital storefronts end-to-end.',
         highlights: [
@@ -262,15 +276,17 @@ export const timelineColumns = [
         period: 'July 2026 – Present',
         location: 'Auckland, NZ',
         status: 'In Progress',
+        logo: unitecLogo,
         focus: [
-          'Network Security',
+          'Cloud Security',
           'Threat Modeling',
           'Secure SDLC',
           'Applied Cryptography',
-          'Risk Assessment'
+          'Risk Assessment',
+          'Research'
         ],
         details:
-          'Formalizing security instincts from production systems to engineer resilient, secure-by-default software architectures.'
+          'Graduate Research, Formalizing security instincts from production systems to engineer resilient, secure-by-default software architectures.'
       }
     ]
   }
