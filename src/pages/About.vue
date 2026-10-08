@@ -7,7 +7,9 @@ import {
   Github,
   ShieldCheck,
   Zap,
-  Layers
+  Layers,
+  ArrowUpRight,
+  FolderGit2
 } from 'lucide-vue-next';
 import { personalInfo, aboutConfig, valueFit } from '../constants/consts';
 
@@ -251,7 +253,7 @@ onUnmounted(() => {
               ref="goRef"
               class="relative z-10 flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-[10px] sm:text-xs text-neutral-800"
             >
-              <Layers class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-500 shrink-0" />
+              <ShieldCheck class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500 shrink-0" />
               <span class="font-medium text-neutral-900">{{ aboutConfig.architectureCard.pipeline[1].name }}</span>
             </div>
 
@@ -260,15 +262,14 @@ onUnmounted(() => {
               ref="securityRef"
               class="relative z-10 flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded bg-white/90 border border-neutral-200/70 shadow-2xs font-mono text-[10px] sm:text-xs text-neutral-800"
             >
-              <ShieldCheck class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500 shrink-0" />
+              <Layers class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-500 shrink-0" />
               <span class="font-medium text-neutral-900">{{ aboutConfig.architectureCard.pipeline[2].name }}</span>
             </div>
           </div>
 
           <!-- Bottom Pill Badge (Matching original preferred design) -->
           <div>
-            <div class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-neutral-100 text-neutral-800 font-mono text-[9px] sm:text-xs font-medium max-w-full">
-              <span class="w-1.5 h-1.5 rounded-full bg-neutral-900 shrink-0"></span>
+            <div class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1.5 rounded-full bg-green-100 text-neutral-800 font-mono text-[9px] sm:text-xs font-medium max-w-full">
               <span class="truncate">{{ aboutConfig.architectureCard.tag }}</span>
             </div>
           </div>
@@ -290,39 +291,64 @@ onUnmounted(() => {
           </div>
         </div>
 
-        <!-- Bento 3: Recent Brands / Teams Card -->
-        <div
-          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 shadow-sm bg-gradient-to-br from-indigo-500 via-indigo-600 to-blue-600 text-white flex flex-col justify-between h-[140px] sm:h-[160px]"
+        <!-- Bento 3: Projects Card / Button (in place of deleted section) -->
+        <a
+          :href="aboutConfig.projectCard.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 text-white flex flex-col justify-between min-h-[145px] sm:min-h-[160px] h-auto sm:h-[160px] group cursor-pointer border border-neutral-800 shadow-[0_2px_10px_rgba(0,0,0,0.06)] hover:border-neutral-600 hover:shadow-xl hover:scale-[1.01] transition-all relative overflow-hidden"
+          title="Visit Projects Website"
         >
-          <p class="text-xs font-medium text-indigo-100 leading-snug">
-            {{ aboutConfig.teamsCard.title }}
-          </p>
+          <!-- Subtle glow in corner on hover -->
+          <div
+            class="absolute -right-6 -top-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl group-hover:bg-cyan-500/25 transition-all pointer-events-none"
+          ></div>
 
-          <div class="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 text-xs font-bold tracking-wider font-mono uppercase text-white/90">
+          <div class="flex items-center justify-between relative z-10">
             <span
-              v-for="team in aboutConfig.teamsCard.teams"
-              :key="team"
-              class="bg-white/15 px-2 py-0.5 rounded"
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-neutral-800/90 text-neutral-300 font-mono text-[10px] sm:text-[11px] font-medium border border-neutral-700/60"
             >
-              {{ team }}
+              <FolderGit2 class="w-3 h-3 text-cyan-400" />
+              <span>{{ aboutConfig.projectCard.badge }}</span>
+            </span>
+
+            <div
+              class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-neutral-800 border border-neutral-700/80 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:bg-neutral-700 group-hover:scale-105 transition-all"
+            >
+              <ArrowUpRight class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-2">
+            <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors flex items-center gap-1.5">
+              <span>{{ aboutConfig.projectCard.title }}</span>
+            </h3>
+            <p class="text-[11px] sm:text-xs text-neutral-400 leading-snug mt-0.5">
+              {{ aboutConfig.projectCard.subtitle }}
+            </p>
+          </div>
+        </a>
+
+        <!-- Bento 4: Profile & Social Circles (LinkedIn, GitHub, Instagram, X) -->
+        <div
+          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 border border-neutral-200/80 bg-neutral-50/70 flex flex-col justify-between min-h-[145px] sm:min-h-[160px] h-auto sm:h-[160px] hover:border-neutral-300 transition-all"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono text-neutral-500 uppercase tracking-wider font-semibold">
+              Profiles & Code
             </span>
           </div>
-        </div>
 
-        <!-- Bento 4: Profile & Social Circles (LinkedIn, GitHub, LeetCode) -->
-        <div
-          class="col-span-2 sm:col-span-1 rounded-2xl p-4 sm:p-5 border border-neutral-200/80 bg-neutral-50/70 flex items-center justify-center h-[110px] sm:h-[160px]"
-        >
-          <div class="flex items-center justify-center gap-4 sm:gap-5">
+          <div class="flex items-center justify-center gap-2 sm:gap-2.5 py-1">
             <!-- LinkedIn -->
             <a
               :href="personalInfo.linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 transition-all flex items-center justify-center text-[#0A66C2] group cursor-pointer"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 hover:border-neutral-300 transition-all flex items-center justify-center text-[#0A66C2] group cursor-pointer"
               title="LinkedIn"
             >
-              <Linkedin class="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Linkedin class="w-4.5 h-4.5 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
             </a>
 
             <!-- GitHub -->
@@ -330,26 +356,52 @@ onUnmounted(() => {
               :href="personalInfo.github"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 transition-all flex items-center justify-center text-neutral-900 group cursor-pointer"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 hover:border-neutral-300 transition-all flex items-center justify-center text-neutral-900 group cursor-pointer"
               title="GitHub"
             >
-              <Github class="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Github class="w-4.5 h-4.5 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
             </a>
 
-            <!-- LeetCode -->
+            <!-- Instagram -->
             <a
-              :href="personalInfo.leetcode"
+              :href="personalInfo.instagram"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 transition-all flex items-center justify-center group cursor-pointer"
-              title="LeetCode (spsaroj)"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 hover:border-neutral-300 transition-all flex items-center justify-center group cursor-pointer"
+              title="Instagram (@bhaitech_)"
             >
-              <svg viewBox="0 0 24 24" class="w-5 h-5 group-hover:scale-110 transition-transform">
-                <path fill="#B3B1B0" d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.676c-.696 0-1.26.604-1.26 1.346s.563 1.346 1.26 1.346H20.74c.696.001 1.26-.603 1.26-1.346z"/>
-                <path fill="#FFA116" d="m13.82 9.176 3.195-3.033c.534-.508.563-1.353.065-1.898a1.36 1.36 0 0 0-1.95-.065L9.08 10.02c-1.383 1.312-2.12 3.092-2.073 5.011.047 1.919.866 3.66 2.308 4.903l4.634 3.99c.563.484 1.408.435 1.892-.128a1.317 1.317 0 0 0-.128-1.893L11.08 17.91c-1.002-.864-1.57-2.074-1.603-3.41-.033-1.334.48-2.57 1.442-3.482l2.899-2.753z"/>
-                <path fill="#262626" d="m18.067 19.349-5.188-4.912a1.332 1.332 0 0 1-.033-1.895 1.365 1.365 0 0 1 1.914-.033l5.187 4.912c.535.507.564 1.352.065 1.897a1.36 1.36 0 0 1-1.945.031z"/>
+              <svg viewBox="0 0 24 24" class="w-4.5 h-4.5 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform">
+                <defs>
+                  <linearGradient id="ig-grad-profile" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f09433"/>
+                    <stop offset="25%" stop-color="#e6683c"/>
+                    <stop offset="50%" stop-color="#dc2743"/>
+                    <stop offset="75%" stop-color="#cc2366"/>
+                    <stop offset="100%" stop-color="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#ig-grad-profile)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
+
+            <!-- X -->
+            <a
+              :href="personalInfo.x"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white border border-neutral-200/80 shadow-2xs hover:shadow-md hover:scale-105 hover:border-neutral-300 transition-all flex items-center justify-center text-neutral-900 group cursor-pointer"
+              title="X (@bhaitech_)"
+            >
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current group-hover:scale-110 transition-transform">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="text-center">
+            <span class="text-[10px] sm:text-[11px] text-neutral-400 font-mono">
+              LinkedIn · GitHub · Instagram · X
+            </span>
           </div>
         </div>
       </div>
@@ -360,7 +412,6 @@ onUnmounted(() => {
       class="rounded-3xl p-6 sm:p-8 lg:p-10 bg-[#327a86] text-white shadow-md space-y-4 scroll-reveal"
     >
       <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-200">
-        <span class="w-2 h-2 rounded-full bg-cyan-300"></span>
         {{ aboutConfig.mission.badge }}
       </div>
 

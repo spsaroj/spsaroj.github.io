@@ -17,7 +17,8 @@ export const personalInfo = {
   email: 'paudelsaroj1@outlook.com',
   linkedin: 'https://www.linkedin.com/in/saroz-paudel',
   github: 'https://github.com/spsaroj',
-  leetcode: 'https://leetcode.com/u/spsaroj/',
+  instagram: 'https://www.instagram.com/bhaitech_/',
+  x: 'https://x.com/bhaitech_/',
   workRights: 'Student Visa',
   status: 'Open to New Zealand Software Engineering roles',
   profilePic,
@@ -47,19 +48,23 @@ export const aboutConfig = {
   architectureCard: {
     pipeline: [
       { name: 'Kafka' },
-      { name: 'Go / Spring' },
-      { name: 'Security' }
+      { name: 'Security' },
+      { name: 'Go / Spring' }
     ],
-    tag: 'Event-Driven Secure Architecture '
+    tag: 'Event-Driven Architecture '
   },
-  teamsCard: {
-    title: "The teams & platforms I've happily engineered with ❤️",
-    teams: ['PNC BANK', 'Becton Dickinson', 'REFFERO', 'UNITEC']
+  projectCard: {
+    badge: 'Projects',
+    title: 'Featured Projects',
+    subtitle: 'Explore live apps',
+    ctaText: 'Visit Projects',
+    url: 'https://toyaam.com/products/'
   },
   socialLinks: [
     { name: 'LinkedIn', key: 'linkedin' },
     { name: 'GitHub', key: 'github' },
-    { name: 'LeetCode', key: 'leetcode' }
+    { name: 'Instagram', key: 'instagram' },
+    { name: 'X', key: 'x' },
   ],
   mission: {
     badge: 'Engineering Focus & Mission',
@@ -378,9 +383,9 @@ export const resumeSkills = [
 
 export const outsideInterests = [
   'Running a homelab hosting open-source applications',
-  'Personal routine management application',
-  'Intelligent multi-agent setup for anomaly detection',
-  'Football & hiking'
+  'Building solo apps',
+  'content creation',
+  'Football & Hiking'
 ];
 
 // Contact Section Configuration
