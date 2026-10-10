@@ -70,8 +70,9 @@ export const aboutConfig = {
     badge: 'Engineering Focus & Mission',
     headline:
       'My mission is to engineer event-driven, distributed systems that stay fast under load and get security right early, before it becomes an incident.',
+    lead: 'Nepali-born, US-trained, now New Zealand-based.',
     description:
-      "Nepali-born, US-trained, now New Zealand-based. I've shipped multi-tenant data boundaries at Reffero, real-time medical device pipelines at Becton Dickinsons, and streaming microservices at PNC Bank. Currently completing a Master of Applied Technologies in Cybersecurity at Unitec. Outside work I run a homelab, hike, and argue about football.",
+      "I've shipped multi-tenant data boundaries at Reffero, real-time medical device pipelines at Becton Dickinsons, and streaming microservices at PNC Bank. Currently completing a Master of Applied Technologies in Cybersecurity at Unitec. Outside work I run a homelab, hike, and argue about football.",
     tags: ['Student Visa', 'Auckland, NZ']
   },
   valueModal: {

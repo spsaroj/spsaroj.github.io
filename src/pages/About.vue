@@ -420,6 +420,7 @@ onUnmounted(() => {
       </h2>
 
       <p class="text-xs sm:text-sm text-cyan-100/90 leading-relaxed max-w-3xl pt-1">
+        <strong class="font-bold text-white">{{ aboutConfig.mission.lead }}</strong>
         {{ aboutConfig.mission.description }}
       </p>
 
