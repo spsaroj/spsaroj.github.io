@@ -80,9 +80,9 @@ const scrollToTop = () => {
               {{ personalInfo.specialization }}
             </span>
 
-            <!-- Location badge with pulse dot -->
+            <!-- Location badge with pin emoji -->
             <span class="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-neutral-600 bg-neutral-100/90 px-1.5 sm:px-2 py-0.5 rounded-full border border-neutral-200 shrink-0 whitespace-nowrap">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="leading-none">📍</span>
               {{ personalInfo.location }}
             </span>
           </button>

@@ -119,13 +119,17 @@ onUnmounted(() => {
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
       <!-- Left Column: Headline, Bio & Primary CTA -->
       <div class="lg:col-span-6 space-y-6 text-left scroll-reveal">
-        <!-- Status Pill: "● AVAILABLE FOR WORK" -->
+        <!-- Status Pill: "🙋‍♂️ AVAILABLE FOR WORK" -->
         <div>
           <span
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200/70 text-cyan-800 font-mono text-[11px] font-semibold uppercase tracking-wider shadow-2xs"
+            class="inline-flex items-center gap-1.5 px-3 rounded-full bg-cyan-50 border border-cyan-200/70 text-cyan-800 font-mono text-[11px] font-semibold uppercase tracking-wider shadow-2xs"
           >
-            <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-            AVAILABLE FOR WORK
+            <img
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Raising%20Hand.png"
+              alt="Waving person"
+              class="w-[22px] h-[22px] self-end shrink-0 object-contain object-bottom select-none"
+            />
+            <span class="py-1">AVAILABLE FOR WORK</span>
           </span>
         </div>
 
@@ -286,7 +290,7 @@ onUnmounted(() => {
           />
           <!-- Location Badge at Top Right -->
           <div class="absolute top-2 right-2 bg-black/50 backdrop-blur-sm px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-mono font-medium text-white border border-white/10 shadow-xs flex items-center gap-1 sm:gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span class="leading-none">📍</span>
             <span>{{ personalInfo.location }}</span>
           </div>
         </div>
